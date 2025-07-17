@@ -57,7 +57,7 @@ watch(() => isMobileMenuOpen.value, (newValue) => {
                 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-white/60 hover:after:w-full
                  after:transition-all after:duration-300 router-link-exact-active:bg-white router-link-exact-active:after:w-full"
                 :to="link.to"
-                :class="{ 'after:w-full': $route.path === link.to, 'after:!bg-white': $route.path === link.to }"
+                :class="{ 'after:w-full': $route.path === link.to | $route.path === link.to + '/', 'after:!bg-white': $route.path === link.to | $route.path === link.to + '/' }"
             >
               <span class="font-bold mr-2">0{{ index }} </span> {{ link.name }}
             </nuxt-link>

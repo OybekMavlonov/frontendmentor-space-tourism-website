@@ -48,7 +48,7 @@ watch(() => route.fullPath, () => {
             class="text-base text-white uppercase relative flex cursor-pointer w-full border-r-4 border-transparent hover:border-white
                  router-link-exact-active:border-white"
             :to="link.to"
-            :class="{ 'border-white': $route.path === link.to, 'after:!bg-white': $route.path === link.to }"
+            :class="{ 'border-white': $route.path === link.to | $route.path === link.to + '/', 'after:!bg-white': $route.path === link.to | $route.path === link.to + '/' }"
         >
           <span class="font-bold mr-2">0{{ index }} </span> {{ link.name }}
         </nuxt-link>
