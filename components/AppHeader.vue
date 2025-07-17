@@ -37,7 +37,11 @@ watch(() => isMobileMenuOpen.value, (newValue) => {
 </script>
 
 <template>
-  <div class="absolute top-0 lg:top-10 w-full z-40">
+  <div class="fixed top-0 lg:top-10 w-full z-40"
+       :class="{
+      'bg-blue-900/70 backdrop-blur-md border-b border-white/10 shadow-md': isScrolled,
+      'bg-transparent border-none shadow-none': !isScrolled
+    }">
     <div class="flex items-center justify-between md:gap-x-10 lg:gap-x-16 w-full relative p-6 md:p-0 md:pl-10 lg:pl-16">
       <img src="../public/images/shared/logo.svg" alt="logo">
 

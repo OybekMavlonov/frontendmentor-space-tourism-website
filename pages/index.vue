@@ -6,7 +6,7 @@
       class="lg:bg-[url('/frontendmentor-space-tourism-website/images/home/background-home-desktop.jpg')]
       sm:bg-[url('/frontendmentor-space-tourism-website/images/home/background-home-tablet.jpg')] bg-[url('/frontendmentor-space-tourism-website/images/home/background-home-mobile.jpg')]
       bg-[url('/images/home/background-home-mobile.jpg')]
-      bg-cover h-full lg:h-screen bg-center w-full text-white flex items-center lg:items-end">
+      bg-cover h-screen sm:h-full lg:h-screen bg-center w-full text-white flex items-center lg:items-end">
     <div class="container px-10 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-32 md:mt-44 lg:gap-x-20 mb-10 lg:mb-32">
       <div class="text-center lg:text-start mb-16 lg:mb-0">
         <h4 class="text-xl lg:text-3xl text-blue-300 uppercase">So, you want to ravel to</h4>
