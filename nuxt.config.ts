@@ -23,12 +23,6 @@ export default defineNuxtConfig({
   },
 
   router: {
-    options: {
-      strict: true, // differentiate `/crew` and `/crew/`
-    }
-  },
-
-  experimental: {
     trailingSlash: false, // <- disables trailing slashes
   },
 
