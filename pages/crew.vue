@@ -18,6 +18,11 @@ onMounted(() => {
 function scrollTo(index) {
   emblaApi.value?.scrollTo(index)
 }
+
+const config = useRuntimeConfig()
+const getImageUrl = (item) => {
+  return config.app.baseURL + item.images.png.slice(1)
+}
 </script>
 
 <template>
@@ -41,7 +46,7 @@ function scrollTo(index) {
                 <h1 class="text-white text-3xl md:text-4xl lg:text-6xl uppercase mt-2 md:mt-4 mb-3 md:mb-6">{{ item.name }}</h1>
                 <p class="text-blue-300 text-base md:text-lg">{{ item.bio }}</p>
               </div>
-              <img :src="item.images.png" :alt="item.name" class=" max-h-[60vh] w-full object-contain mt-20 lg:mt-0">
+              <img :src="getImageUrl(item)" :alt="item.name" class=" max-h-[60vh] w-full object-contain mt-20 lg:mt-0">
             </div>
           </div>
         </div>

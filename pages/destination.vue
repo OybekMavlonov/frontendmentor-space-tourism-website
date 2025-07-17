@@ -23,9 +23,12 @@ const imageUrl = computed(() =>
       <div
           class="container px-10 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-6 sm:mt-22 lg:gap-x-20 lg:mb-0">
         <Transition name="fade" mode="out-in">
-          <div class="flex justify-center">
-            <img class="mt-12 mb-14 lg:m-0 size-36 md:size-80 lg:w-full lg:h-full" :key="currentTab.name"
-                 :src="imageUrl" :alt="currentTab.name">
+          <div :key="currentTab.name" class="flex justify-center">
+            <img
+                class="mt-12 mb-14 lg:m-0 size-36 md:size-80 lg:w-full lg:h-full"
+                :src="imageUrl"
+                :alt="currentTab.name"
+            >
           </div>
         </Transition>
         <div class="p-0 lg:px-12">
@@ -40,23 +43,26 @@ const imageUrl = computed(() =>
               {{ item.name }}
             </button>
           </div>
-          <Transition name="fade" mode="out-in">
-            <div :key="currentTab.name">
-              <div class="mt-4 lg:mt-10 mb-2 md:mb-4 uppercase text-5xl lg:text-9xl">{{ currentTab.name }}</div>
-              <p class="text-base lg:text-lg text-blue-300">{{ currentTab.description }}</p>
-              <div class="w-full my-4 md:my-8 lg:my-10 h-0.5 bg-white/25"></div>
-              <div class="grid grid-cols-1 md:grid-cols-2 uppercase gap-6 mb-10">
-                <div>
-                  <div class="text-blue-300 text-sm mb-0 md:mb-3">avf. distance</div>
-                  <div class="text-white text-lg lg:text-2xl">{{ currentTab.distance }}</div>
-                </div>
-                <div>
-                  <div class="text-blue-300 text-sm mb-0 md:mb-3">est. travel time</div>
-                  <div class="text-white text-lg lg:text-2xl">{{ currentTab.travel }}</div>
+
+          <div class="relative min-h-[500px]">
+            <Transition name="fade" mode="out-in">
+              <div :key="currentTab.name" class="">
+                <div class="mt-4 lg:mt-10 mb-2 md:mb-4 uppercase text-5xl lg:text-9xl">{{ currentTab.name }}</div>
+                <p class="text-base lg:text-lg text-blue-300">{{ currentTab.description }}</p>
+                <div class="w-full my-4 md:my-8 lg:my-10 h-0.5 bg-white/25"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 uppercase gap-6 mb-10">
+                  <div>
+                    <div class="text-blue-300 text-sm mb-0 md:mb-3">avf. distance</div>
+                    <div class="text-white text-lg lg:text-2xl">{{ currentTab.distance }}</div>
+                  </div>
+                  <div>
+                    <div class="text-blue-300 text-sm mb-0 md:mb-3">est. travel time</div>
+                    <div class="text-white text-lg lg:text-2xl">{{ currentTab.travel }}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Transition>
+            </Transition>
+          </div>
         </div>
       </div>
     </div>

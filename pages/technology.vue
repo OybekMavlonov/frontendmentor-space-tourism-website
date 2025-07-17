@@ -18,6 +18,11 @@ onMounted(() => {
 function scrollTo(index) {
   emblaApi.value?.scrollTo(index)
 }
+
+const config = useRuntimeConfig()
+const getImageUrl = (item) => {
+  return config.app.baseURL + item.images.portrait.slice(1)
+}
 </script>
 
 <template>
@@ -36,7 +41,7 @@ function scrollTo(index) {
           <div ref="emblaRef" class="shrink-0 flex-grow-0 basis-full" v-for="item in technology"
                :key="item.name">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 mb-20 mt-12">
-              <img :src="item.images.portrait" :alt="item.name" class="lg:order-2 max-h-[30vh] md:max-h-[40vh] lg:max-h-[50vh] w-full">
+              <img :src="getImageUrl(item)" :alt="item.name" class="lg:order-2 max-h-[30vh] md:max-h-[40vh] lg:max-h-[50vh] w-full">
               <div class="lg:order-1 lg:ml-36 px-10 lg:px-0 flex flex-col items-center mt-20 md:mt-28 lg:mt-0">
                 <h2 class="text-white/50 text-xl md:text-2xl lg:text-3xl uppercase">The terminology ...</h2>
                 <h1 class="text-white text-3xl md:text-4xl lg:text-6xl uppercase mt-2 lg:mt-4 mb-2 lg:mb-6">{{ item.name }}</h1>
