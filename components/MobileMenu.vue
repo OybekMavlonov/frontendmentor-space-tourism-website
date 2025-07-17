@@ -7,14 +7,22 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'close'): void;
 }>();
+
+const route = useRoute()
+
+watch(() => route.fullPath, () => {
+  emit('close')
+})
 </script>
 
 <template>
   <transition
-    enter-active-class="transition duration-300 ease"
-    leave-active-class="transition duration-300 ease"
-    enter-from-class="opacity-0"
-    leave-to-class="opacity-0"
+      enter-active-class="transition-opacity duration-500 ease-in-out"
+      leave-active-class="transition-opacity duration-500 ease-in-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
   >
     <div
       v-if="isOpen"
@@ -24,7 +32,7 @@ const emit = defineEmits<{
     />
   </transition>
   <aside
-    class="flex flex-col fixed top-0 right-0 w-80 h-full bg-blue-900/15 backdrop-blur-md z-50 transition-transform duration-300 ease-in-out"
+    class="flex flex-col fixed top-0 right-0 w-80 h-full bg-blue-900/15 backdrop-blur-md z-50 transition-transform duration-500 ease-in-out"
     :class="{
       'translate-x-0': isOpen,
       'translate-x-full': !isOpen,
@@ -36,7 +44,6 @@ const emit = defineEmits<{
       </button>
     </header>
     <nav class="flex flex-col gap-y-8 overflow-auto pl-8">
-<!--      <div  class="cursor-pointer">-->
         <nuxt-link v-for="(link, index) in links" :key="link.to"
             class="text-base text-white uppercase relative flex cursor-pointer w-full border-r-4 border-transparent hover:border-white
                  router-link-exact-active:border-white"
@@ -45,7 +52,6 @@ const emit = defineEmits<{
         >
           <span class="font-bold mr-2">0{{ index }} </span> {{ link.name }}
         </nuxt-link>
-<!--      </div>-->
     </nav>
   </aside>
 </template>

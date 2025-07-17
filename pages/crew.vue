@@ -30,7 +30,7 @@ const getImageUrl = (item) => {
       class="bg-[url('/frontendmentor-space-tourism-website/images/crew/background-crew-mobile.jpg')]
       sm:bg-[url('/frontendmentor-space-tourism-website/images/crew/background-crew-tablet.jpg')]
       lg:bg-[url('/frontendmentor-space-tourism-website/images/crew/background-crew-desktop.jpg')]
-       bg-cover h-screen md:h-full lg:h-screen bg-center w-full relative">
+       bg-cover h-full lg:h-screen bg-center w-full relative">
     <div class="container px-10 mx-auto relative text-center lg:text-start">
       <h4 class="text-xl sm:text-2xl lg:text-3xl text-white uppercase md:text-start pt-28 sm:pt-32 lg:pt-48">
         <span class="opacity-25 mr-4">02</span>
@@ -46,13 +46,13 @@ const getImageUrl = (item) => {
                 <h1 class="text-white text-3xl md:text-4xl lg:text-6xl uppercase mt-2 md:mt-4 mb-3 md:mb-6">{{ item.name }}</h1>
                 <p class="text-blue-300 text-base md:text-lg">{{ item.bio }}</p>
               </div>
-              <img :src="getImageUrl(item)" :alt="item.name" class=" max-h-[60vh] w-full object-contain mt-20 lg:mt-0">
+              <img :src="getImageUrl(item)" :alt="item.name" class="max-h-[270px] lg:max-h-[58vh] w-full object-contain mt-20 lg:mt-0">
             </div>
           </div>
         </div>
 
         <!-- Dots BELOW carousel and aligned left -->
-        <div class="absolute bottom-[57%] md:bottom-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:bottom-14 lg:left-24 flex gap-4">
+        <div class="absolute bottom-[42%] md:bottom-[40%] lg: left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:bottom-14 lg:left-24 flex gap-4">
           <button
               v-for="(dot, dotIndex) in crew.length"
               :key="dotIndex"

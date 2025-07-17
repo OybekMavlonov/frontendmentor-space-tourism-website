@@ -30,7 +30,7 @@ const getImageUrl = (item) => {
       class="bg-[url('/frontendmentor-space-tourism-website/images/technology/background-technology-mobile.jpg')]
       sm:bg-[url('/frontendmentor-space-tourism-website/images/technology/background-technology-tablet.jpg')]
       md:bg-[url('/frontendmentor-space-tourism-website/images/technology/background-technology-desktop.jpg')]
-       bg-cover h-screen md:h-full lg:h-screen bg-center w-full">
+       bg-cover h-full lg:h-screen bg-center w-full">
     <div class="container mx-auto text-center lg:text-start">
       <h4 class="px-10 lg:px-0 text-xl sm:text-2xl lg:text-3xl md:text-start text-white uppercase pt-28 sm:pt-32 lg:pt-48">
         <span class="opacity-25 mr-4">03</span>
@@ -52,7 +52,7 @@ const getImageUrl = (item) => {
         </div>
 
         <!-- Dots BELOW carousel and aligned left -->
-        <div class="absolute top-[50%] sm:top-[55%] md:top-[58%] lg:top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:left-10  flex lg:flex-col gap-4 lg:gap-8">
+        <div class="absolute top-[45%] min-[400px]:top-[50%] min-[600px]:top-[52%] sm:top-[55%] md:top-[58%] lg:top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:left-10  flex lg:flex-col gap-4 lg:gap-8">
           <button
               v-for="(dot, dotIndex) in technology.length"
               :key="dotIndex"

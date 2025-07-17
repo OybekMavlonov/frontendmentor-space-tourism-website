@@ -1,5 +1,6 @@
 <script setup>
 import MobileMenu from "./MobileMenu.vue"
+
 const route = useRoute()
 const links = computed(() => [
   {name: "home", to: "/"},
@@ -41,7 +42,6 @@ watch(() => isMobileMenuOpen.value, (newValue) => {
       <img src="../public/images/shared/logo.svg" alt="logo">
 
       <div class="hidden md:flex relative w-full justify-end items-center">
-<!--        <div class="hidden lg:inline grow translate-x-10 w-full top-1/2 h-0.5 bg-white/25 top-0 right-3/4 z-50 left-0"></div>-->
         <nav
             :class="[
       'hidden md:flex items-center justify-end gap-x-6 lg:gap-x-12 pr-10 lg:pr-24 pl-28 lg:pl-60 backdrop-blur-[120px] backdrop-brightness-200 md:backdrop-brightness-200',

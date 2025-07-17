@@ -14,18 +14,18 @@ const imageUrl = computed(() =>
       class="bg-[url('/frontendmentor-space-tourism-website/images/destination/background-destination-mobile.jpg')]
       sm:bg-[url('/frontendmentor-space-tourism-website/images/destination/background-destination-tablet.jpg')]
       lg:bg-[url('/frontendmentor-space-tourism-website/images/destination/background-destination-desktop.jpg')]
-       bg-cover h-screen md:h-full lg:h-screen bg-center w-full text-white">
+       bg-cover h-full lg:h-screen bg-center w-full text-white">
     <div class="container px-10 mx-auto text-center md:text-start">
       <h4 class="text-xl md:text-2xl lg:text-3xl text-white uppercase pt-28 sm:pt-32 lg:pt-48">
         <span class="opacity-25 mr-4">01</span>
         Pick your destination
       </h4>
       <div
-          class="container px-10 mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-6 sm:mt-22 lg:gap-x-20 lg:mb-0">
+          class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-6 sm:mt-22 lg:gap-x-20 lg:mb-0">
         <Transition name="fade" mode="out-in">
           <div :key="currentTab.name" class="flex justify-center">
             <img
-                class="mt-12 mb-14 lg:m-0 size-36 md:size-80 lg:w-full lg:h-full"
+                class="mt-0 md:mt-6 mb-4 md:mb-8 lg:m-0 size-36 md:size-80 lg:w-full lg:h-full"
                 :src="imageUrl"
                 :alt="currentTab.name"
             >

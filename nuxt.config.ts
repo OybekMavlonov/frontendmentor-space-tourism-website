@@ -22,6 +22,16 @@ export default defineNuxtConfig({
     },
   },
 
+  router: {
+    options: {
+      strict: true, // differentiate `/crew` and `/crew/`
+    }
+  },
+
+  experimental: {
+    trailingSlash: false, // <- disables trailing slashes
+  },
+
   nitro: {
     prerender: {
       // If you have dynamic routes, add them here
